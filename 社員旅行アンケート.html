@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0065)file:///C:/Users/relative/Downloads/shainjin_anketo_photo_23.html -->
+<!-- saved from url=(0065)file:///C:/Users/relative/Downloads/shainjin_anketo_photo_33.html -->
 <html lang="ja"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -45,9 +45,10 @@ body { font-family: 'Noto Sans JP', sans-serif; background: var(--bg); color: va
 .q-block:focus-within { border-color: var(--accent2); box-shadow: 0 4px 16px rgba(245,166,35,0.15); }
 .q-label { font-size: 14px; font-weight: 700; margin-bottom: 12px; line-height: 1.5; padding-left: 8px; }
 .stars { display: flex; gap: 8px; padding-left: 8px; }
-.star { font-size: 28px; cursor: pointer; color: var(--star-off); transition: color 0.15s, transform 0.15s; user-select: none; line-height: 1; }
+.star { font-size: 28px; cursor: pointer; color: #E0D5C5; transition: color 0.15s, transform 0.15s; user-select: none; line-height: 1; }
+.star.active { color: #2A1F0E !important; }
 .star:hover { transform: scale(1.25) rotate(-5deg); }
-.star.active { color: var(--star-on); }
+
 .radio-group { display: flex; gap: 8px; flex-wrap: wrap; padding-left: 8px; }
 .radio-btn { padding: 7px 16px; border: 2px solid var(--border); border-radius: 40px; font-size: 13px; font-family: 'Noto Sans JP', sans-serif; cursor: pointer; color: var(--text-muted); background: transparent; transition: all 0.15s; font-weight: 500; }
 .radio-btn:hover { border-color: var(--accent2); color: var(--accent); }
@@ -103,32 +104,30 @@ textarea:focus { border-color: var(--accent2); }
 
 
 <div class="wrapper">
-  <div class="tab-bar">
-    <button class="tab active" onclick="showTab(&#39;form&#39;)">📝 アンケート回答</button>
-    <button class="tab" onclick="showTab(&#39;result&#39;)">📊 集計結果</button>
-  </div>
+  
+    
 
   <div id="tab-form">
     <div class="info-box">
       <span class="info-icon">📬</span>
-      <span>回答を送信すると、リーダー（t.watanabe@relative.company）へメールが送信されます。<br>メールアプリが起動したら、そのまま送信ボタンを押してください。</span>
+      <span>回答を送信すると、リーダー（t.miyanouchi@relative.company）へメールが送信されます。<br>メールアプリが起動したら、そのまま送信ボタンを押してください。</span>
     </div>
 
     <div class="section-title"><span class="icon">🗺️</span>今回の旅行の振り返り</div>
-    <div class="q-block"><div class="q-label">1. 今回の旅行全体の満足度を教えてください</div><div class="stars" id="s1"><span class="star" data-val="1">★</span><span class="star" data-val="2">★</span><span class="star" data-val="3">★</span><span class="star" data-val="4">★</span><span class="star" data-val="5">★</span></div></div>
-    <div class="q-block"><div class="q-label">2. スケジュール・日程の長さは適切でしたか？</div><div class="stars" id="s2"><span class="star" data-val="1">★</span><span class="star" data-val="2">★</span><span class="star" data-val="3">★</span><span class="star" data-val="4">★</span><span class="star" data-val="5">★</span></div></div>
-    <div class="q-block"><div class="q-label">3. 移動手段（交通機関・バスなど）は快適でしたか？</div><div class="stars" id="s3"><span class="star" data-val="1">★</span><span class="star" data-val="2">★</span><span class="star" data-val="3">★</span><span class="star" data-val="4">★</span><span class="star" data-val="5">★</span></div></div>
-    <div class="q-block"><div class="q-label">4. 宿泊先（ホテル・旅館）の満足度を教えてください</div><div class="stars" id="s4"><span class="star" data-val="1">★</span><span class="star" data-val="2">★</span><span class="star" data-val="3">★</span><span class="star" data-val="4">★</span><span class="star" data-val="5">★</span></div></div>
-    <div class="q-block"><div class="q-label">5. 食事の内容・質はいかがでしたか？</div><div class="stars" id="s5"><span class="star" data-val="1">★</span><span class="star" data-val="2">★</span><span class="star" data-val="3">★</span><span class="star" data-val="4">★</span><span class="star" data-val="5">★</span></div></div>
+    <div class="q-block"><div class="q-label">1. 今回の旅行全体の満足度を教えてください</div><div class="stars" id="s1"><span class="star" data-val="1" onclick="setStars(this.parentElement,1)">★</span><span class="star" data-val="2" onclick="setStars(this.parentElement,2)">★</span><span class="star" data-val="3" onclick="setStars(this.parentElement,3)">★</span><span class="star" data-val="4" onclick="setStars(this.parentElement,4)">★</span><span class="star" data-val="5" onclick="setStars(this.parentElement,5)">★</span></div></div>
+    <div class="q-block"><div class="q-label">2. スケジュール・日程の長さは適切でしたか？</div><div class="stars" id="s2"><span class="star" data-val="1" onclick="setStars(this.parentElement,1)">★</span><span class="star" data-val="2" onclick="setStars(this.parentElement,2)">★</span><span class="star" data-val="3" onclick="setStars(this.parentElement,3)">★</span><span class="star" data-val="4" onclick="setStars(this.parentElement,4)">★</span><span class="star" data-val="5" onclick="setStars(this.parentElement,5)">★</span></div></div>
+    <div class="q-block"><div class="q-label">3. 移動手段（交通機関・バスなど）は快適でしたか？</div><div class="stars" id="s3"><span class="star" data-val="1" onclick="setStars(this.parentElement,1)">★</span><span class="star" data-val="2" onclick="setStars(this.parentElement,2)">★</span><span class="star" data-val="3" onclick="setStars(this.parentElement,3)">★</span><span class="star" data-val="4" onclick="setStars(this.parentElement,4)">★</span><span class="star" data-val="5" onclick="setStars(this.parentElement,5)">★</span></div></div>
+    <div class="q-block"><div class="q-label">4. 宿泊先（ホテル・旅館）の満足度を教えてください</div><div class="stars" id="s4"><span class="star" data-val="1" onclick="setStars(this.parentElement,1)">★</span><span class="star" data-val="2" onclick="setStars(this.parentElement,2)">★</span><span class="star" data-val="3" onclick="setStars(this.parentElement,3)">★</span><span class="star" data-val="4" onclick="setStars(this.parentElement,4)">★</span><span class="star" data-val="5" onclick="setStars(this.parentElement,5)">★</span></div></div>
+    <div class="q-block"><div class="q-label">5. 食事の内容・質はいかがでしたか？</div><div class="stars" id="s5"><span class="star" data-val="1" onclick="setStars(this.parentElement,1)">★</span><span class="star" data-val="2" onclick="setStars(this.parentElement,2)">★</span><span class="star" data-val="3" onclick="setStars(this.parentElement,3)">★</span><span class="star" data-val="4" onclick="setStars(this.parentElement,4)">★</span><span class="star" data-val="5" onclick="setStars(this.parentElement,5)">★</span></div></div>
 
     <div class="section-title"><span class="icon">🤝</span>コミュニケーション・チームビルディング</div>
-    <div class="q-block"><div class="q-label">6. 普段交流の少ない社員と話せましたか？</div><div class="stars" id="s6"><span class="star" data-val="1">★</span><span class="star" data-val="2">★</span><span class="star" data-val="3">★</span><span class="star" data-val="4">★</span><span class="star" data-val="5">★</span></div></div>
-    <div class="q-block"><div class="q-label">7. チームの結束感が高まったと感じましたか？</div><div class="stars" id="s7"><span class="star" data-val="1">★</span><span class="star" data-val="2">★</span><span class="star" data-val="3">★</span><span class="star" data-val="4">★</span><span class="star" data-val="5">★</span></div></div>
-    <div class="q-block"><div class="q-label">8. アクティビティや体験プログラムは楽しめましたか？</div><div class="stars" id="s8"><span class="star" data-val="1">★</span><span class="star" data-val="2">★</span><span class="star" data-val="3">★</span><span class="star" data-val="4">★</span><span class="star" data-val="5">★</span></div></div>
+    <div class="q-block"><div class="q-label">6. 普段交流の少ない社員と話せましたか？</div><div class="stars" id="s6"><span class="star" data-val="1" onclick="setStars(this.parentElement,1)">★</span><span class="star" data-val="2" onclick="setStars(this.parentElement,2)">★</span><span class="star" data-val="3" onclick="setStars(this.parentElement,3)">★</span><span class="star" data-val="4" onclick="setStars(this.parentElement,4)">★</span><span class="star" data-val="5" onclick="setStars(this.parentElement,5)">★</span></div></div>
+    <div class="q-block"><div class="q-label">7. チームの結束感が高まったと感じましたか？</div><div class="stars" id="s7"><span class="star" data-val="1" onclick="setStars(this.parentElement,1)">★</span><span class="star" data-val="2" onclick="setStars(this.parentElement,2)">★</span><span class="star" data-val="3" onclick="setStars(this.parentElement,3)">★</span><span class="star" data-val="4" onclick="setStars(this.parentElement,4)">★</span><span class="star" data-val="5" onclick="setStars(this.parentElement,5)">★</span></div></div>
+    <div class="q-block"><div class="q-label">8. アクティビティや体験プログラムは楽しめましたか？</div><div class="stars" id="s8"><span class="star" data-val="1" onclick="setStars(this.parentElement,1)">★</span><span class="star" data-val="2" onclick="setStars(this.parentElement,2)">★</span><span class="star" data-val="3" onclick="setStars(this.parentElement,3)">★</span><span class="star" data-val="4" onclick="setStars(this.parentElement,4)">★</span><span class="star" data-val="5" onclick="setStars(this.parentElement,5)">★</span></div></div>
 
     <div class="section-title"><span class="icon">📋</span>運営・段取り</div>
-    <div class="q-block"><div class="q-label">9. 旅行前の案内・情報共有は十分でしたか？</div><div class="stars" id="s9"><span class="star" data-val="1">★</span><span class="star" data-val="2">★</span><span class="star" data-val="3">★</span><span class="star" data-val="4">★</span><span class="star" data-val="5">★</span></div></div>
-    <div class="q-block"><div class="q-label">10. 旅行の時期・曜日はよかったですか？</div><div class="stars" id="s10"><span class="star" data-val="1">★</span><span class="star" data-val="2">★</span><span class="star" data-val="3">★</span><span class="star" data-val="4">★</span><span class="star" data-val="5">★</span></div></div>
+    <div class="q-block"><div class="q-label">9. 旅行前の案内・情報共有は十分でしたか？</div><div class="stars" id="s9"><span class="star" data-val="1" onclick="setStars(this.parentElement,1)">★</span><span class="star" data-val="2" onclick="setStars(this.parentElement,2)">★</span><span class="star" data-val="3" onclick="setStars(this.parentElement,3)">★</span><span class="star" data-val="4" onclick="setStars(this.parentElement,4)">★</span><span class="star" data-val="5" onclick="setStars(this.parentElement,5)">★</span></div></div>
+    <div class="q-block"><div class="q-label">10. 旅行の時期・曜日はよかったですか？</div><div class="stars" id="s10"><span class="star" data-val="1" onclick="setStars(this.parentElement,1)">★</span><span class="star" data-val="2" onclick="setStars(this.parentElement,2)">★</span><span class="star" data-val="3" onclick="setStars(this.parentElement,3)">★</span><span class="star" data-val="4" onclick="setStars(this.parentElement,4)">★</span><span class="star" data-val="5" onclick="setStars(this.parentElement,5)">★</span></div></div>
     <div class="q-block">
       <div class="q-label">11. 旅行の頻度（年1回など）はどう感じますか？</div>
       <div class="radio-group" id="r11">
@@ -167,49 +166,70 @@ textarea:focus { border-color: var(--accent2); }
     </div>
   </div>
 
-  <div id="tab-result" style="display:none">
-    <div id="result-content"></div>
-  </div>
-</div>
+    </div>
+
 
 <script>
-const MAILTO = 't.watanabe@relative.company';
+const MAILTO = 't.miyanouchi@relative.company';
 const KEY = 'shainjin_anketo_v1';
-let answers = JSON.parse(localStorage.getItem(KEY) || '[]');
-const starQs = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10'];
-const starLabels = { q1:'全体満足度', q2:'日程の適切さ', q3:'移動の快適さ', q4:'宿泊先', q5:'食事', q6:'交流度', q7:'結束感', q8:'アクティビティ', q9:'事前案内', q10:'時期・曜日' };
-function buildStars() {
-  starQs.forEach((qid, i) => {
-    const el = document.getElementById('s' + (i + 1));
-    if (!el) return;
-    el.innerHTML = '';
-    for (let v = 1; v <= 5; v++) {
-      const s = document.createElement('span');
-      s.className = 'star'; s.textContent = '★'; s.dataset.val = v;
-      s.onclick = () => setStars(el, v); el.appendChild(s);
+
+function setStars(el, val) {
+  el.dataset.value = val;
+  el.querySelectorAll('.star').forEach(function(s) {
+    s.style.color = parseInt(s.getAttribute('data-val')) <= val ? '#1A1917' : '#E0D5C5';
+  });
+}
+
+function selectRadio(groupId, btn) {
+  var el = document.getElementById(groupId);
+  el.dataset.value = btn.textContent;
+  el.querySelectorAll('.radio-btn').forEach(function(b) {
+    if (b === btn) {
+      b.style.background = '#F5A623';
+      b.style.color = '#fff';
+      b.style.borderColor = '#F5A623';
+      b.style.fontWeight = '700';
+    } else {
+      b.style.background = 'transparent';
+      b.style.color = '';
+      b.style.borderColor = '';
+      b.style.fontWeight = '500';
     }
   });
 }
-function setStars(el, val) {
-  el.dataset.value = val;
-  el.querySelectorAll('.star').forEach(s => { s.className = 'star' + (parseInt(s.dataset.val) <= val ? ' active' : ''); });
-}
-function selectRadio(groupId, btn) {
-  const el = document.getElementById(groupId);
-  el.dataset.value = btn.textContent;
-  el.querySelectorAll('.radio-btn').forEach(b => { b.className = 'radio-btn' + (b === btn ? ' selected' : ''); });
-}
-const multiState = {};
+
+var multiState = {};
 function toggleMulti(groupId, btn) {
   if (!multiState[groupId]) multiState[groupId] = new Set();
-  const s = multiState[groupId]; const val = btn.textContent;
+  var s = multiState[groupId];
+  var val = btn.textContent;
   s.has(val) ? s.delete(val) : s.add(val);
-  btn.className = 'radio-btn' + (s.has(val) ? ' selected' : '');
+  if (s.has(val)) {
+    btn.style.background = '#F5A623';
+    btn.style.color = '#fff';
+    btn.style.borderColor = '#F5A623';
+    btn.style.fontWeight = '700';
+  } else {
+    btn.style.background = 'transparent';
+    btn.style.color = '';
+    btn.style.borderColor = '';
+    btn.style.fontWeight = '500';
+  }
 }
-function getStarLabel(val) { return val > 0 ? '★'.repeat(val) + '☆'.repeat(5 - val) + ' (' + val + '/5)' : '未回答'; }
+
+function getStarLabel(val) {
+  return val > 0 ? '★'.repeat(val) + '☆'.repeat(5 - val) + ' (' + val + '/5)' : '未回答';
+}
+
 function submitForm() {
-  const entry = { ts: new Date().toLocaleString('ja-JP') };
-  starQs.forEach((qid, i) => { const el = document.getElementById('s' + (i + 1)); entry[qid] = parseInt(el.dataset.value || '0'); });
+  var starQs = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10'];
+  var entry = { ts: new Date().toLocaleString('ja-JP') };
+
+  starQs.forEach(function(qid, i) {
+    var el = document.getElementById('s' + (i + 1));
+    entry[qid] = parseInt(el.dataset.value || '0');
+  });
+
   entry.q11 = document.getElementById('r11').dataset.value || '未回答';
   entry.q12 = document.getElementById('f12').value.trim() || '（未記入）';
   entry.q13 = multiState['r13'] && multiState['r13'].size ? [...multiState['r13']].join('、') : '（未選択）';
@@ -217,95 +237,101 @@ function submitForm() {
   entry.q15 = document.getElementById('f15').value.trim() || '（未記入）';
   entry.q16 = document.getElementById('f16').value.trim() || '（未記入）';
   entry.q17 = document.getElementById('f17').value.trim() || '（未記入）';
-  const saved = JSON.parse(localStorage.getItem(KEY) || '[]');
-  saved.push(entry); localStorage.setItem(KEY, JSON.stringify(saved)); answers = saved;
-  const subject = encodeURIComponent('【社員旅行アンケート回答】' + entry.ts);
-  const body = encodeURIComponent(`社員旅行アンケートの回答が届きました。
-回答日時：${entry.ts}
 
-━━━━━━━━━━━━━━━━━━
+  var subject = encodeURIComponent('【社員旅行アンケート回答】' + entry.ts);
+  var body = encodeURIComponent(
+    '社員旅行アンケートの回答が届きました。
+回答日時：' + entry.ts + '
+
+' +
+    '━━━━━━━━━━━━━━━━━━
 ■ 今回の旅行の振り返り
 ━━━━━━━━━━━━━━━━━━
-1. 全体満足度　　：${getStarLabel(entry.q1)}
-2. スケジュール　：${getStarLabel(entry.q2)}
-3. 移動手段　　　：${getStarLabel(entry.q3)}
-4. 宿泊先　　　　：${getStarLabel(entry.q4)}
-5. 食事　　　　　：${getStarLabel(entry.q5)}
+' +
+    '1. 全体満足度　　：' + getStarLabel(entry.q1) + '
+' +
+    '2. スケジュール　：' + getStarLabel(entry.q2) + '
+' +
+    '3. 移動手段　　　：' + getStarLabel(entry.q3) + '
+' +
+    '4. 宿泊先　　　　：' + getStarLabel(entry.q4) + '
+' +
+    '5. 食事　　　　　：' + getStarLabel(entry.q5) + '
 
-6. 交流度　　　　：${getStarLabel(entry.q6)}
-7. 結束感　　　　：${getStarLabel(entry.q7)}
-8. アクティビティ：${getStarLabel(entry.q8)}
+' +
+    '━━━━━━━━━━━━━━━━━━
+■ コミュニケーション
+━━━━━━━━━━━━━━━━━━
+' +
+    '6. 交流度　　　　：' + getStarLabel(entry.q6) + '
+' +
+    '7. 結束感　　　　：' + getStarLabel(entry.q7) + '
+' +
+    '8. アクティビティ：' + getStarLabel(entry.q8) + '
 
-9.  事前案内　　：${getStarLabel(entry.q9)}
-10. 時期・曜日　：${getStarLabel(entry.q10)}
-11. 旅行の頻度感：${entry.q11}
+' +
+    '━━━━━━━━━━━━━━━━━━
+■ 運営
+━━━━━━━━━━━━━━━━━━
+' +
+    '9.  事前案内　　：' + getStarLabel(entry.q9) + '
+' +
+    '10. 時期・曜日　：' + getStarLabel(entry.q10) + '
+' +
+    '11. 旅行の頻度感：' + entry.q11 + '
 
-12. 行きたい旅行先：${entry.q12}
-13. 旅行スタイル　：${entry.q13}
-14. アクティビティ：${entry.q14}
+' +
+    '━━━━━━━━━━━━━━━━━━
+■ 次回リクエスト
+━━━━━━━━━━━━━━━━━━
+' +
+    '12. 行きたい旅行先：' + entry.q12 + '
+' +
+    '13. 旅行スタイル　：' + entry.q13 + '
+' +
+    '14. アクティビティ：' + entry.q14 + '
 
-15. よかった点：
-${entry.q15}
+' +
+    '━━━━━━━━━━━━━━━━━━
+■ 改善・要望
+━━━━━━━━━━━━━━━━━━
+' +
+    '15. よかった点：
+' + entry.q15 + '
 
-16. 改善点：
-${entry.q16}
+' +
+    '16. 改善点：
+' + entry.q16 + '
 
-17. リーダーへのメッセージ：
-${entry.q17}`);
-  window.location.href = 'mailto:' + MAILTO + '?subject=' + subject + '&body=' + body;
-  const msg = document.getElementById('submit-msg');
+' +
+    '17. リーダーへのメッセージ：
+' + entry.q17
+  );
+
+  var a = document.createElement('a');
+  a.href = 'mailto:' + MAILTO + '?subject=' + subject + '&body=' + body;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+
+  var msg = document.getElementById('submit-msg');
   msg.textContent = '✅ メールアプリが開きます。そのまま送信ボタンを押して完了です！';
-  setTimeout(() => msg.textContent = '', 6000);
-  starQs.forEach((_, i) => { const el = document.getElementById('s'+(i+1)); delete el.dataset.value; el.querySelectorAll('.star').forEach(s => s.className='star'); });
-  const r11=document.getElementById('r11'); delete r11.dataset.value; r11.querySelectorAll('.radio-btn').forEach(b=>b.className='radio-btn');
-  if(multiState['r13']) multiState['r13'].clear();
-  document.getElementById('r13').querySelectorAll('.radio-btn').forEach(b=>b.className='radio-btn');
-  ['f12','f14','f15','f16','f17'].forEach(id=>document.getElementById(id).value='');
-}
-function showTab(tab) {
-  document.querySelectorAll('.tab').forEach(t=>{ t.className='tab'+(t.textContent.includes('回答')===(tab==='form')?' active':''); });
-  document.getElementById('tab-form').style.display=tab==='form'?'':'none';
-  document.getElementById('tab-result').style.display=tab==='result'?'':'none';
-  if(tab==='result') renderResults();
-}
-function avg(arr) { return arr.length ? arr.reduce((a,b)=>a+b,0)/arr.length : 0; }
-function renderResults() {
-  const el=document.getElementById('result-content');
-  if(!answers.length){ el.innerHTML='<div class="empty">まだ回答がありません。</div>'; return; }
-  const n=answers.length;
-  let html=`<div class="stat-grid">
-    <div class="stat-card"><div class="stat-num">${n}</div><div class="stat-lbl">回答数</div></div>
-    <div class="stat-card"><div class="stat-num">${avg(answers.map(a=>a.q1)).toFixed(1)}</div><div class="stat-lbl">総合満足度 平均</div></div>
-    <div class="stat-card"><div class="stat-num">${avg(answers.map(a=>a.q7)).toFixed(1)}</div><div class="stat-lbl">結束感 平均</div></div>
-  </div>`;
-  html+='<div class="section-title"><span class="icon">⭐</span>5段階評価の集計</div>';
-  starQs.forEach(qid=>{
-    const vals=answers.map(a=>a[qid]).filter(v=>v>0);
-    if(!vals.length) return;
-    const a=avg(vals); let bars='';
-    for(let v=5;v>=1;v--){ const cnt=vals.filter(x=>x===v).length; const pct=Math.round(cnt/vals.length*100); bars+=`<div class="bar-wrap"><span class="bar-label">${v}★</span><div class="bar-track"><div class="bar-fill" style="width:${pct}%"></div></div><span class="bar-count">${cnt}件</span></div>`; }
-    html+=`<div class="result-card"><div class="result-label">${starLabels[qid]}</div><div class="avg-badge">平均 ${a.toFixed(1)} / 5.0</div>${bars}</div>`;
+  setTimeout(function() { msg.textContent = ''; }, 6000);
+
+  // フォームリセット
+  var starQs2 = ['q1','q2','q3','q4','q5','q6','q7','q8','q9','q10'];
+  starQs2.forEach(function(_, i) {
+    var el = document.getElementById('s' + (i + 1));
+    delete el.dataset.value;
+    el.querySelectorAll('.star').forEach(function(s) { s.style.color = '#E0D5C5'; });
   });
-  html+='<div class="section-title"><span class="icon">📊</span>その他の集計</div>';
-  const freq={};
-  answers.forEach(a=>{ if(a.q11&&a.q11!=='未回答') freq[a.q11]=(freq[a.q11]||0)+1; });
-  html+=`<div class="result-card"><div class="result-label">旅行の頻度感</div><div class="pill-wrap">${Object.entries(freq).map(([k,v])=>`<span class="pill">${k}：${v}件</span>`).join('')||'<span style="color:var(--text-muted);font-size:13px">回答なし</span>'}</div></div>`;
-  html+='<div class="section-title"><span class="icon">🌏</span>次回リクエスト</div>';
-  const dest=answers.map(a=>a.q12).filter(d=>d&&d!=='（未記入）');
-  if(dest.length) html+=`<div class="result-card"><div class="result-label">次回行きたい旅行先</div>${dest.map(d=>`<div class="free-item">${d}</div>`).join('')}</div>`;
-  const styleCount={};
-  answers.forEach(a=>{ if(a.q13&&a.q13!=='（未選択）') a.q13.split('、').forEach(s=>{ styleCount[s]=(styleCount[s]||0)+1; }); });
-  html+=`<div class="result-card"><div class="result-label">希望する旅行スタイル</div><div class="pill-wrap">${Object.entries(styleCount).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<span class="pill">${k}：${v}票</span>`).join('')||'<span style="color:var(--text-muted);font-size:13px">回答なし</span>'}</div></div>`;
-  html+='<div class="section-title"><span class="icon">💬</span>自由記述</div>';
-  [{key:'q15',label:'よかった点'},{key:'q16',label:'改善点'},{key:'q17',label:'リーダーへのメッセージ'}].forEach(({key,label})=>{
-    const items=answers.map(a=>a[key]).filter(d=>d&&d!=='（未記入）');
-    if(items.length) html+=`<div class="result-card"><div class="result-label">${label}</div>${items.map(d=>`<div class="free-item">${d}</div>`).join('')}</div>`;
-  });
-  html+=`<button class="reset-btn" onclick="resetData()">回答データをリセットする</button>`;
-  el.innerHTML=html;
+  var r11 = document.getElementById('r11');
+  delete r11.dataset.value;
+  r11.querySelectorAll('.radio-btn').forEach(function(b) { b.className = 'radio-btn'; });
+  if (multiState['r13']) multiState['r13'].clear();
+  document.getElementById('r13').querySelectorAll('.radio-btn').forEach(function(b) { b.className = 'radio-btn'; });
+  ['f12','f14','f15','f16','f17'].forEach(function(id) { document.getElementById(id).value = ''; });
 }
-function resetData() { if(confirm('すべての回答データを削除しますか？')){ answers=[]; localStorage.removeItem(KEY); renderResults(); } }
-buildStars();
 </script>
 
 </body></html>
